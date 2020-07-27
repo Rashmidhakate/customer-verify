@@ -1,0 +1,4 @@
+<?php $orderIds = $block->getOrderIds(); ?>
+<script>
+        window.customInfo = <?php /* @escapeNotVerified */ echo json_encode($orderIds); ?>;
+</script>
