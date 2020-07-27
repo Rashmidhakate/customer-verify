@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/customer/login" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Customer\CustomerInterface" method="login"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>   
+    <route url="/V1/customer/logout/" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Customer\CustomerInterface" method="logout"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route> 
+    <route url="/V1/customer/getprofile" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Customer\CustomerInterface" method="getProfile"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/createAppQuote" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="createAppQuote"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/createAppOrder" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="createAppOrder"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/listAppQuote" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="listAppQuote"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/deleteAppQuote" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="deleteAppQuote"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/listAppQuoteItems" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="listAppQuoteItems"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/deleteAppQuoteItem" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="deleteAppQuoteItem"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/listAppOrders" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="listAppOrders"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/mobileapi/getOrderDetails" method="POST">
+        <service class="Brainvire\Mobileapi\Api\Cart\CartInterface" method="getOrderDetails"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/products/list/" method="GET">
+        <service class="Brainvire\Customapi\Api\Product\ProductInterface" method="getProductList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/customers/list" method="GET">
+        <service class="Brainvire\Customapi\Api\Customer\CustomerInterface" method="getCustomerList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/products/price-qty/:productId" method="GET">
+        <service class="Brainvire\Customapi\Api\Product\ProductInterface" method="GetProductQtyAndPrice"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/products/set-price-qty" method="POST">
+        <service class="Brainvire\Customapi\Api\Product\ProductInterface" method="SetProductQtyAndPrice"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+    </route>
+    <route url="/V1/user/list" method="GET">
+        <service class="Brainvire\Customapi\Api\Customer\CustomerInterface" method="getUserList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/salesperson/list" method="GET">
+        <service class="Brainvire\Customapi\Api\Salesperson\SalespersonInterface" method="getSalespersonList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/usersalesperson/list/:userId" method="GET">
+        <service class="Brainvire\Customapi\Api\Salesperson\SalespersonInterface" method="getUserSalespersonList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>     
+</routes>

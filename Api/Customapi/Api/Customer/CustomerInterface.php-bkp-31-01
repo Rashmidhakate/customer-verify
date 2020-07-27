@@ -1,0 +1,34 @@
+<?php
+namespace Brainvire\Mobileapi\Api\Customer;
+
+/**
+ * Customer information interface
+ *
+ * @api
+ */
+
+interface CustomerInterface {
+	/**
+	 * Autenticate the customer by email and password
+	 * @param string $email
+     * @param string $password
+     * @param string $firstname
+     * @param string $lastname
+	 * @param string $device_type
+	 * @param string $device_token
+	 * @param string $appVersion
+	 * @param string $social_type
+	 * @param string $is_social_login
+	 * @param string $social_token
+	 * @return \Brainvire\Mobileapi\Api\Data\CustomerLoginInformationInterface
+	 */
+	public function login($email, $password, $firstname = '', $lastname = '', $device_type = '', $device_token = '', $appVersion = '', $social_type = '', $is_social_login = '', $social_token = '');
+
+	/**
+     * Get Customer information.
+     *
+     * @param string $timestamp
+     * @return array
+     */
+    public function getCustomerList($timestamp = "");
+}
