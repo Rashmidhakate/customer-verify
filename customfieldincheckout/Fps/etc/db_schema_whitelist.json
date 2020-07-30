@@ -1,0 +1,19 @@
+{
+    "fps": {
+        "column": {
+            "fps_id": true,
+            "title": true,
+            "sku": true,
+            "resolution": true,
+            "quality": true,
+            "game": true,
+            "fps": true
+        },
+        "index": {
+            "FPS_TITLE_SKU": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

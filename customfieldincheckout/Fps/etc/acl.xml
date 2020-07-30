@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Brainvire_Fps::fps" title="FPS" sortOrder="10" >
+                    <resource id="Brainvire_Fps::create" title="Manage FPS" sortOrder="0" />
+                    <resource id="Brainvire_Fps::fps_upload" title="Upload" sortOrder="100" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

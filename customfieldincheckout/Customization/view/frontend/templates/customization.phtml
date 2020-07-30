@@ -1,0 +1,351 @@
+
+<h1>Select Games You Play</h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <h2 class="text-center mb-4 mt-5">Open World</h2>
+    <div class="row justify-content-center">
+      <?php foreach ($this->getGames("Open World") as $game): ?>
+      <div class="col-sm-auto col-6 mb-5">
+        <div class="card game-card " id="<?php echo ucwords($game->getName()); ?>">
+            <?php if (is_array($this->getOptionLabelById('quality',$game->getQuality()))) {?>
+              <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo implode(',',$this->getOptionLabelById('quality',$game->getQuality())); ?>" />
+            <?php }else{ ?>
+              <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo $this->getOptionLabelById('quality',$game->getQuality()); ?>" />
+            <?php } ?>
+            <?php if (is_array($this->getOptionLabelById('resolution',$game->getResolution()))) {?>
+              <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo implode(',',$this->getOptionLabelById('resolution',$game->getResolution())); ?>" />
+            <?php }else{ ?>
+              <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo $this->getOptionLabelById('resolution',$game->getResolution()); ?>" />
+            <?php } ?>
+          
+          <input type="hidden" name="game_card_input_product_id" class="game_card_input_product_id" id="game_card_input_product_id" value="<?php echo $game->getId(); ?>" />
+          <span class="tick">✓</span>
+          <img src="<?php echo $this->getImageUrl($game->getImage()); ?>" alt="" />
+          <div class="card-body game-card-body">
+            <h3 class="card-title game-card-title"><?php echo ucwords($game->getName()); ?></h3>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2 class="text-center mb-4 mt-5">Action RPG</h2>
+    <div class="row justify-content-center">
+      <?php foreach ($this->getGames("Action RPG") as $game): ?>
+      <div class="col-sm-auto col-6 mb-5">
+        <div class="card game-card" id="<?php echo ucwords($game->getName()); ?>">
+          <?php if (is_array($this->getOptionLabelById('quality',$game->getQuality()))) {?>
+            <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo implode(',',$this->getOptionLabelById('quality',$game->getQuality())); ?>" />
+          <?php }else{ ?>
+            <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo $this->getOptionLabelById('quality',$game->getQuality()); ?>" />
+          <?php } ?>
+          <?php if (is_array($this->getOptionLabelById('resolution',$game->getResolution()))) {?>
+            <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo implode(',',$this->getOptionLabelById('resolution',$game->getResolution())); ?>" />
+          <?php }else{ ?>
+            <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo $this->getOptionLabelById('resolution',$game->getResolution()); ?>" />
+          <?php } ?>
+          <input type="hidden" name="game_card_input_product_id" class="game_card_input_product_id" id="game_card_input_product_id" value="<?php echo $game->getId(); ?>" />
+          <span class="tick">✓</span>
+          <img src="<?php echo $this->getImageUrl($game->getImage()) ?>" alt="" />          
+          <div class="card-body game-card-body">
+            <h3 class="card-title game-card-title"><?php echo ucwords($game->getName()); ?></h3>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2 class="text-center mb-4 mt-5">FPS</h2>
+    <div class="row justify-content-center">
+      <?php foreach ($this->getGames("FPS") as $game): ?>
+      <div class="col-sm-auto col-6 mb-5">
+        <div class="card game-card" id="<?php echo ucwords($game->getName()); ?>">
+        <?php if (is_array($this->getOptionLabelById('quality',$game->getQuality()))) {?>
+          <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo implode(',',$this->getOptionLabelById('quality',$game->getQuality())); ?>" />
+        <?php }else{ ?>
+          <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo $this->getOptionLabelById('quality',$game->getQuality()); ?>" />
+        <?php } ?>
+        <?php if (is_array($this->getOptionLabelById('resolution',$game->getResolution()))) {?>
+          <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo implode(',',$this->getOptionLabelById('resolution',$game->getResolution())); ?>" />
+        <?php }else{ ?>
+          <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo $this->getOptionLabelById('resolution',$game->getResolution()); ?>" />
+        <?php } ?>
+        <input type="hidden" name="game_card_input_product_id" class="game_card_input_product_id" id="game_card_input_product_id" value="<?php echo $game->getId(); ?>" />
+        <span class="tick">✓</span>
+          <img src="<?php echo $this->getImageUrl($game->getImage()) ?>" alt="" />          
+          <div class="card-body game-card-body">
+            <h3 class="card-title game-card-title"><?php echo ucwords($game->getName()); ?></h3>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2 class="text-center mb-4 mt-5">Online FPS</h2>
+    <div class="row justify-content-center">
+      <?php foreach ($this->getGames("Online FPS") as $game): ?>
+      <div class="col-sm-auto col-6 mb-5">
+        <div class="card game-card" id="<?php echo ucwords($game->getName()); ?>">
+        <?php if (is_array($this->getOptionLabelById('quality',$game->getQuality()))) {?>
+          <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo implode(',',$this->getOptionLabelById('quality',$game->getQuality())); ?>" />
+        <?php }else{ ?>
+          <input type="hidden" name="game_card_input_quality" class="game_card_input_quality" id="game_card_input_quality" value="<?php echo $this->getOptionLabelById('quality',$game->getQuality()); ?>" />
+        <?php } ?>
+        <?php if (is_array($this->getOptionLabelById('resolution',$game->getResolution()))) {?>
+          <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo implode(',',$this->getOptionLabelById('resolution',$game->getResolution())); ?>" />
+        <?php }else{ ?>
+          <input type="hidden" name="game_card_input_resolution" class="game_card_input_resolution" id="game_card_input_resolution" value="<?php echo $this->getOptionLabelById('resolution',$game->getResolution()); ?>" />
+        <?php } ?>
+        <input type="hidden" name="game_card_input_product_id" class="game_card_input_product_id" id="game_card_input_product_id" value="<?php echo $game->getId(); ?>" />
+        <span class="tick">✓</span>
+          <img src="<?php echo $this->getImageUrl($game->getImage()) ?>" alt="" />          
+          <div class="card-body game-card-body">
+            <h3 class="card-title game-card-title"><?php echo ucwords($game->getName()); ?></h3>
+          </div>
+        </div>
+      </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</div>
+
+
+<div class="row align-items-end mt-4">
+  <div class="col">
+    </div>
+    <div class="col-auto">
+        <h2>Select Resolution</h2>
+        <div class="btn-group btn-group-lg game-btn-group" role="group" aria-label="Basic example">
+            <input type="hidden" name="merge_value" class="merge_value" id="merge_value" value="" />
+            <button type="button" class="btn btn-primary game-resolution" data-resolution="1080P">
+            1080P
+            </button>
+            <button type="button" class="btn btn-default game-resolution" data-resolution="1440P">
+            1440P
+            </button>
+        </div>
+        <button class="btn btn-primary btn-lg to-stage-two" id="to-stage-two">
+        Select Quality
+        </button>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Select Prefered Game Quality</h5>
+                <button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="media mb-4 game-quality quality-selected" data-quality="MEDIUM">
+                  <div class="quality-radio"></div>
+                  <div class="media-body">
+                    <h2 class=" mb-0">Medium</h2>
+                    <p>Moderate performance in all games</p>
+                  </div>
+                </div>
+                <div class="media mb-4 game-quality" data-quality="HIGH">
+                  <div class="quality-radio"></div>
+                  <div class="media-body">
+                    <h2 class=" mb-0">High</h2>
+                    <p>High performance in most of the games</p>
+                  </div>
+                </div>
+                <div class="media mb-4 game-quality" data-quality="ULTRA">
+                  <div class="quality-radio"></div>
+                  <div class="media-body">
+                    <h2 class=" mb-0">Ultra</h2>
+                    <p>Best performance in most of the games</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary to-stage-three">Tweak System</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+require(["jquery"], function($) {
+    var merge_value = [];
+
+    $(".game-resolution").on("click", function(e) {
+      $(".game-resolution")
+      .removeClass("btn-primary")
+      .addClass("btn-default");
+      $(this)
+      .removeClass("btn-default")
+      .addClass("btn-primary");
+    });
+    $(".game-card").on("click", function(e) {
+        if ($(this).hasClass("game-card-blue")) {
+
+            $(this).removeClass("game-card-blue");
+            
+            $('.game-resolution[data-resolution="1080P"]').css("display","block");
+            $('.game-resolution[data-resolution="1440P"]').removeClass('btn-primary');
+            $('.game-resolution[data-resolution="1440P"]').addClass('btn-default');
+            $('.game-resolution[data-resolution="1080P"]').removeClass('btn-default');
+            $('.game-resolution[data-resolution="1080P"]').addClass('btn-primary');
+
+            $(".game-card-blue").each(function() {
+              if($(this).find(".game_card_input_quality").val() == 'Ultra' && $(this).find(".game_card_input_resolution").val() == '1440P'){
+                $('.game-resolution[data-resolution="1080P"]').css("display","none");
+                $('.game-resolution[data-resolution="1080P"]').removeClass('btn-primary');
+                $('.game-resolution[data-resolution="1080P"]').addClass('btn-default');
+                $('.game-resolution[data-resolution="1440P"]').removeClass('btn-default');
+                $('.game-resolution[data-resolution="1440P"]').addClass('btn-primary');
+              }
+            });
+    
+            var itemtoRemove = $(this).find(".game_card_input_product_id").val();
+            merge_value.splice($.inArray(itemtoRemove, merge_value),1);
+            $(".merge_value").val(merge_value);
+            var merge_input_value = $(".merge_value").val();
+            //$.cookie('selected_game',merge_input_value);
+
+        } else {
+            $(this).addClass("game-card-blue");
+            /* add selected value in array */ 
+            merge_value.push($(this).find(".game_card_input_product_id").val());
+            $(".merge_value").val(merge_value);
+            /* append selected value array in input field */ 
+            var merge_input_value = $(".merge_value").val();
+            /* save selected value array in cookie*/ 
+            //$.cookie('selected_game',merge_input_value);
+
+            if($(this).find(".game_card_input_quality").val() == 'Ultra' && $(this).find(".game_card_input_resolution").val() == '1440P'){
+               // if($(".game-resolution.btn-primary").data("resolution") == '1080P'){
+                //     $(".game-resolution.btn-primary").css("display","none");
+                    $('.game-resolution[data-resolution="1080P"]').css("display","none");
+                    $('.game-resolution[data-resolution="1080P"]').removeClass('btn-primary');
+                    $('.game-resolution[data-resolution="1080P"]').addClass('btn-default');
+                    $('.game-resolution[data-resolution="1440P"]').removeClass('btn-default');
+                    $('.game-resolution[data-resolution="1440P"]').addClass('btn-primary');
+               //}
+            }
+        }
+    });
+
+
+    function removeModal(){
+      $(".modal").removeClass("show").css('display','none');
+    }
+
+    function showModal(data){
+      $(".modal").addClass("show").css('display','block');
+      var ultraIds = [];
+      $("input[id*='game_card_input_quality']").each(function (i, value) {
+          if($(value).val() == 'Ultra'){
+            ultraIds.push($(value).parent().find("input[name='game_card_input_product_id']").val());
+          }
+      });
+    
+      var found = false;
+      for (var i = 0; i < ultraIds.length; i++) {
+        if (merge_value.indexOf(ultraIds[i]) > -1) {
+            found = true;
+            $('.game-quality[data-quality="MEDIUM"]').hide();
+            $('.game-quality[data-quality="HIGH"]').hide();
+            $('.game-quality[data-quality="MEDIUM"]').removeClass('quality-selected');
+            $('.game-quality[data-quality="ULTRA"]').addClass('quality-selected');
+            break;
+        }else{
+            $('.game-quality[data-quality="MEDIUM"]').show();
+            $('.game-quality[data-quality="HIGH"]').show();
+            $('.game-quality[data-quality="MEDIUM"]').addClass('quality-selected');
+            $('.game-quality[data-quality="ULTRA"]').removeClass('quality-selected');
+        }
+      }
+    }
+
+    $(".to-stage-two").on("click",function(e) {
+      var selected = $(".game-card-blue");
+      var ids = [];
+      var resolution = $(".game-resolution.btn-primary").data("resolution");
+        
+      // $.cookie('selected_game_ids', null, {path:'/'});
+      // $.cookie('selected_resolution', null, {path:'/'});
+      // $.cookie('selected_quality', null, {path:'/'});
+     
+      if (selected.length > 0) {
+        showModal();
+      }else{
+        alert("please select game.");
+      }
+
+      $(".game-quality").on("click", function(e) {
+        $(".game-quality")
+        .removeClass("quality-selected")
+        .addClass("quality-default");
+        $(this)
+        .removeClass("quality-default")
+        .addClass("quality-selected");
+      });
+
+    });
+    $(".close-modal").on('click',removeModal);
+
+    $(".to-stage-three").on("click", function(e) {
+       
+        var selectedGameIds = $(".merge_value").val();
+        var selectedResolution = $(".game-resolution.btn-primary").data("resolution");
+        var selectedQuality = $(".game-quality.quality-selected").data("quality");
+        // console.log(selectedResolution);
+        //   console.log(selectedQuality);
+        //   console.log(selectedGameIds);
+          if(selectedGameIds && selectedResolution && selectedQuality){
+              var customurl = "<?php echo $this->getUrl('game/flow/savedata')?>";
+              $.ajax({
+                url: customurl,
+                type: 'POST',
+                dataType: 'json',
+                showLoader: true,
+                data: {
+                    game_ids: selectedGameIds,
+                    resolution: selectedResolution,
+                    quality: selectedQuality
+                },
+                complete: function(response) {             
+                  //if(response.response.code == 200){
+                    window.location = "<?php echo $this->getUrl('game/flow/response')?>";  
+                  //}    
+                  
+                },
+                error: function (xhr, status, errorThrown) {
+                    console.log('Error happens. Try again.');
+                }
+              });  
+          }
+
+  
+        // console.log(selectedResolution);
+        // console.log(selectedQuality);
+        // if($.cookie('selected_game_ids')){
+        //   $.cookie('selected_game_ids',selectedGameIds);
+        // }else{
+        //   $.cookie('selected_game_ids',selectedGameIds);
+        // }
+        // if($.cookie('selected_resolution')){
+        //   $.cookie('selected_resolution',selectedResolution);
+        // }else{
+        //   $.cookie('selected_resolution',selectedResolution);
+        // }
+        // if($.cookie('selected_quality')){
+        //   $.cookie('selected_quality',selectedQuality);
+        // }else{
+        //   $.cookie('selected_quality',selectedQuality);
+        // }
+        
+        
+    });
+});
+</script>

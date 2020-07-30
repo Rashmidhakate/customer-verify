@@ -1,0 +1,16 @@
+<div class="custom-shipping-method-fields-shipping-information" data-bind="visible: selectedMethod()">
+	<div colspan="4">
+		<div id="my-carrier-custom-block-wrapper" >
+			<form data-mage-init='{"validation": {}}' class="form" name="assembler_address_form" id="assembler_address_form" method="post" autocomplete="off" data-role="assembler_address_form">
+				<label for="assemblerCity">Select Assembler City</label>
+				<div class="field _required">   
+					<div class="control">
+						<select data-validate="{'required-entry':true}" name="assembler_id" id="assembler_id" data-bind="value:selectedValue,options: availableAddresses(),optionsValue: 'value' , optionsText: 'label'"></select>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+

@@ -1,0 +1,31 @@
+<div class="upload-file">
+	
+	<form data-mage-init='{"validation": {}}' name="zip-form" action="<?php echo $this->getUrl('customization/index/importzip'); ?>" method="post" enctype="multipart/form-data">
+		<?php echo $this->getBlockHtml('formkey')?>
+		<div class="field-item"><input type="file" name="zipcode" data-validate="{required:true}" class="control"></div>
+		<div class="field-item"><input type="submit" name="Upload File" class="submit"></div>
+	 </form>
+
+</div>
+<div class="download-link">
+ 	<span id="sample-file-span" class="display"><a id="sample-file-link" href="<?php echo $this->getUrl('customization/index/download'); ?>">
+ 		<?php echo __('Download Sample File'); ?></a></span>
+</div>
+<style>
+	.customization-index-index .page-content{min-height: 500px;}
+	.customization-index-index .submit{
+		background: #eb5202;
+	    border-color: #eb5202;
+	    color: #fff;
+	    padding: 10px;
+	}
+	.customization-index-index .control{
+		padding: 10px;
+	    background: #e6e6e6;
+	    border: 1px solid #e6e6e6;
+	}
+	.upload-file .field-item{
+		display: inline-block;
+		vertical-align: top;
+	}
+</style>

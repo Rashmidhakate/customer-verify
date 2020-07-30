@@ -1,0 +1,21 @@
+{
+    "bv_zipcode": {
+        "column": {
+            "id": true,
+            "zipcode": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "quote": {
+        "column": {
+            "assembler_id": true
+        }
+    },
+    "sales_order": {
+        "column": {
+            "assembler_id": true
+        }
+    }
+}
