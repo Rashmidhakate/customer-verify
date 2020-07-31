@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-	<preference for="Magento\Sales\Model\ResourceModel\Order\Grid\Collection" type="Brainvire\Ordercustomization\Model\ResourceModel\Order\Grid\Collection" />
-    <type name="Magento\SalesSequence\Model\Sequence">
-        <arguments>
-            <argument name="pattern" xsi:type="string"><![CDATA[%s%'.08d%s]]></argument>
-        </arguments>
-    </type>
-</config>
