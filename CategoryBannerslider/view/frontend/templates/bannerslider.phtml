@@ -1,0 +1,58 @@
+<?php
+/**
+ * slider template
+ *
+ * @see \Brainvire\CategoryBannerslider\Block\Bannerslider
+ */
+?>
+<div class="owl-carousel owl-theme">
+<?php
+	$mediaUrl = $block->getMediaUrl();
+	$sliderCollection = $block->getSliderCollection();
+	foreach($sliderCollection as $collection){
+		$category = $block->getCategoryCollection($collection->getCategoryId());
+		$categoryUrl = $category->getUrl();
+		$categoryName = $category->getName();
+		$data = $block->resize($collection->getImage(),2000,1000);
+?>
+	<div class="item">
+		<a href="<?php echo $categoryUrl; ?>">
+			<img src="<?php echo $data; ?>">
+			<span><?php echo $categoryName; ?></span>
+		</a>
+	</div>
+<?php
+	} 
+?>
+</div>
+
+
+<script>
+	require([
+	'jquery',
+	'owlcarouselslider'
+	], function () {
+		'use strict';
+		jQuery.noConflict();
+    	jQuery('.owl-carousel').owlCarousel({
+			loop:true,
+			margin:10,
+			responsiveClass:true,
+			responsive:{
+				0:{
+					items:1,
+					nav:true
+				},
+				600:{
+					items:3,
+					nav:false
+				},
+				1000:{
+					items:5,
+					nav:true,
+					loop:false
+				}
+			}
+		});
+	});
+</script>

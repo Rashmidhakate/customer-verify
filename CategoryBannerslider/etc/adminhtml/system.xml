@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="categorybannerslider" translate="label" sortOrder="10">
+            <label>CategoryBannerSlider Settings</label>
+        </tab>
+        <section id="slider" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>settings</label>
+            <tab>categorybannerslider</tab>
+            <resource>Brainvire_CategoryBannerslider::settings</resource>
+            <group id="information" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Add slider in page or block</label>
+                <frontend_model>Brainvire\CategoryBannerslider\Block\Info</frontend_model>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <virtualType name="Brainvire\CategoryBannerslider\CategoryImageUpload" type="Brainvire\CategoryBannerslider\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">banner/upload</argument>
+            <argument name="basePath" xsi:type="string">banner/upload</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>               
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Brainvire\CategoryBannerslider\Controller\Adminhtml\Banner\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Brainvire\CategoryBannerslider\CategoryImageUpload</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="manage_category_banner_listing_data_source" xsi:type="string">Brainvire\CategoryBannerslider\Model\ResourceModel\Banner\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Brainvire\CategoryBannerslider\Model\ResourceModel\Banner\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">manage_category_banner</argument>
+            <argument name="resourceModel" xsi:type="string">Brainvire\CategoryBannerslider\Model\ResourceModel\Banner</argument>
+        </arguments>
+    </virtualType>
+</config>
