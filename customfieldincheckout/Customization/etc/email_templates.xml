@@ -1,4 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
-	<template id="assembler_mail_template" label="Assembler Form" file="assembler_mail_template.html" type="html" module="Brainvire_Customization" area="frontend"/>
-</config>

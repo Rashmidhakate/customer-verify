@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
-	<menu>
-	  <add id="Brainvire_Fps::fps" title="FPS" translate="title" module="Brainvire_Fps" sortOrder="100"  resource="Brainvire_Fps::create"/>
-
-	  <add id="Brainvire_Fps::fps_upload" title="FPS Upload" translate="title" module="Brainvire_Fps" parent="Brainvire_Fps::fps" sortOrder="10" action="fps/index/new" resource="Brainvire_Fps::fps_upload"/>	 
-	</menu>
-</config>
