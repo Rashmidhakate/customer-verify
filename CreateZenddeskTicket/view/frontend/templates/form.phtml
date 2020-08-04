@@ -1,0 +1,106 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \Magento\Contact\Block\ContactForm $block */
+?>
+<form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      enctype="multipart/form-data"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <div class="field name required">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Requester Name')) ?></span></label>
+            <div class="control">
+                <input name="name" id="name" title="<?= $block->escapeHtml(__('Requester Name')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Requester Email')) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?= $block->escapeHtml(__('Requester Email')) ?>" class="input-text" type="email" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field order_number required">
+            <label class="label" for="order_number"><span><?= $block->escapeHtml(__('Order Number')) ?></span></label>
+            <div class="control">
+                <input name="order_number" id="order_number" title="<?= $block->escapeHtml(__('Order Number')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+         <div class="field select_bank required">
+            <label class="label" for="select_bank"><span><?= $block->escapeHtml(__('Select Bank')) ?></span></label>
+            <div class="control">
+                <select name="select_bank" id="select_bank" data-validate="{required:true}">
+                    <option value="" selected>Please Select Bank</option>
+                    <option value="Banamex">Banamex</option>
+                    <option value="Bancomer">Bancomer</option>
+                </select>   
+            </div>
+        </div>
+        <div class="field authorization_number required">
+            <label class="label" for="authorization_number"><span><?= $block->escapeHtml(__('Authorization Number')) ?></span></label>
+            <div class="control">
+                <input name="authorization_number" id="authorization_number" title="<?= $block->escapeHtml(__('Authorization Number')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+         <div class="field deposit required">
+            <label class="label" for="deposit"><span><?= $block->escapeHtml(__('Exact amount deposited')) ?></span></label>
+            <div class="control">
+                <input name="deposit" id="deposit" title="<?= $block->escapeHtml(__('Exact amount deposited')) ?>" class="input-text" type="text" data-validate="{'required':true,'validate-number':true}"/>
+            </div>
+        </div>
+        <div class="field deposit_slip required">
+            <label class="label" for="deposit_slip"><span><?= $block->escapeHtml(__('Upload Deposit Slip')) ?></span></label>
+            <div class="control">
+                <input name="deposit_slip" id="deposit_slip" title="<?= $block->escapeHtml(__('Upload Deposit Slip')) ?>" class="input-text" type="file" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field subject required">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Subject')) ?></span></label>
+            <div class="control">
+                <input name="subject" id="subject" title="<?= $block->escapeHtml(__('Subject')) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+       
+       <div class="field select_type required">
+            <label class="label" for="select_type"><span><?= $block->escapeHtml(__('Select Type')) ?></span></label>
+            <div class="control">
+                <select name="select_type" id="select_type" data-validate="{required:true}">
+                    <option value="" selected>Please Select Type</option>
+                    <option value="question">Question</option>
+                    <option value="incident">Incident</option>
+                    <option value="problem">Problem</option>
+                    <option value="task">Task</option>
+                </select>   
+            </div>
+        </div>
+
+        <div class="field select_priority required">
+            <label class="label" for="select_priority"><span><?= $block->escapeHtml(__('Select Priority')) ?></span></label>
+            <div class="control">
+                <select name="select_priority" id="select_priority" data-validate="{required:true}">
+                    <option value="" selected>Please Select Priority</option>
+                    <option value="low">Low</option>
+                    <option value="normal">Normal</option>
+                    <option value="high">High</option>
+                    <option value="urgent">Urgent</option>
+                </select>   
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>

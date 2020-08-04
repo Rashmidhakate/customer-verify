@@ -1,0 +1,14 @@
+﻿
+
+To configur zenddesk in magento2 , 
+
+1 - Require to install zendesk library in magento setup
+
+composer require zendesk/zendesk_api_client_php
+
+2 – Require subdomain value of Zenddesk account , username and token
+
+Url :- your_url/createzenddeskticket
+
+
+
