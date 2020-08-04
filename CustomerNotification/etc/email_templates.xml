@@ -1,6 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
-    <template id="billing_address_change_template" label="Billing Address Change Template" file="billing_address.html" type="html" module="Brainvire_CustomerNotification" area="frontend"/>
-    <template id="shipping_address_change_template" label="Shipping Address Change Template" file="shipping_address.html" type="html" module="Brainvire_CustomerNotification" area="frontend"/>
-    <template id="account_information_change_template" label="Account Information Change Template" file="account_information.html" type="html" module="Brainvire_CustomerNotification" area="frontend"/>
-</config>
